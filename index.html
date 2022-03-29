@@ -7,16 +7,23 @@
     <title>parallax test</title>
   </head>
   <body>
-    <div id="scene">
-      <img src="abstract_gradients_1.jpg" alt="bg" class="layer" id="bg" data-depth=".4">
-      <img src="fmt_logo.png" alt="logo" id="logo" data-depth="-.3">
+    <div id="bg" class="center-elements">
+      <img src="abstract_gradients_2.jpg" alt="bg" id="bg-image" data-depth=".2">
+    </div>
+    <div id="parallax-logo" class="center-elements">
+      <img src="fmt_logo.png" alt="logo" id="logo" data-depth="-.05">
     </div>
     <script src="parallax.min.js"></script>
     <script type="text/javascript">
-    var scene = document.getElementById('scene');
-var parallaxInstance = new Parallax(scene, {
-  relativeInput:true
-});
+      var bgScene = document.getElementById('bg');
+      var logoScene = document.getElementById('parallax-logo');
+
+      var parallaxInstance = new Parallax(bgScene, {
+        relativeInput:true
+      });
+      var parallaxInstance = new Parallax(logoScene, {
+        relativeInput:true
+      });
     </script>
   </body>
 </html>
