@@ -3,15 +3,22 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles.css">
+
     <title>parallax test</title>
   </head>
   <body>
-    <div class="parallax">
+    <!-- <div class="parallax">
       <img src="abstract_gradients_1.jpg" alt="bg" class="layer" id="bg" data-speed=".4">
 
     </div>
-    <img src="fmt_logo.png" alt="logo" class="layer" id="logo">
-    <script type="text/javascript">
+    <div class="logo-container">
+      <img src="fmt_logo.png" alt="logo" id="logo">
+    </div> -->
+    <div id="scene">
+  <div data-depth="0.2" style="background:red;"><p>halelele</p> </div>
+  <div data-depth="0.6"><p>ahksdfhasdf</p> </div>
+</div>
+<!-- Old parallax script   <script type="text/javascript">
       document.addEventListener("mousemove", parallax);
       function parallax(e){
         this.querySelectorAll('.layer').forEach(layer => {
@@ -23,6 +30,13 @@
           layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
         });
       }
+    </script> -->
+    <script src="parallax.min.js"></script>
+    <script type="text/javascript">
+    var scene = document.getElementById('scene');
+var parallaxInstance = new Parallax(scene, {
+  relativeInput:true
+});
     </script>
   </body>
 </html>
