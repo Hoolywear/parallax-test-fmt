@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-.parallax {
+.parallax, .logo-container {
   position: absolute;
   top: 0;
   left: 0;

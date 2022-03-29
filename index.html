@@ -3,26 +3,20 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles.css">
+
     <title>parallax test</title>
   </head>
   <body>
-    <div class="parallax">
-      <img src="abstract_gradients_1.jpg" alt="bg" class="layer" id="bg" data-speed=".4">
-
+    <div id="scene">
+      <img src="abstract_gradients_1.jpg" alt="bg" class="layer" id="bg" data-depth=".4">
+      <img src="fmt_logo.png" alt="logo" id="logo" data-depth="-.3">
     </div>
-    <img src="fmt_logo.png" alt="logo" class="layer" id="logo">
+    <script src="parallax.min.js"></script>
     <script type="text/javascript">
-      document.addEventListener("mousemove", parallax);
-      function parallax(e){
-        this.querySelectorAll('.layer').forEach(layer => {
-          const speed = layer.getAttribute('data-speed');
-
-          const x = (window.innerWidth - e.pageX*speed)/10;
-          const y = (window.innerHeight - e.pageY*speed)/10;
-
-          layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
-        });
-      }
+    var scene = document.getElementById('scene');
+var parallaxInstance = new Parallax(scene, {
+  relativeInput:true
+});
     </script>
   </body>
 </html>
