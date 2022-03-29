@@ -27,3 +27,21 @@
 #logo {
   max-width: 250px;
 }
+
+.menu-container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  padding:50px;
+  flex-direction: column;
+} a {
+  color: white;
+  font-size: 1.3rem;
+  text-decoration: none;
+} a:active {
+  text-decoration: none;
+} .opposite-side {
+  align-self: flex-end;
+}
