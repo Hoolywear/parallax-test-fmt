@@ -7,11 +7,21 @@
   </head>
   <body>
     <div class="parallax">
-      <img src="abstract_gradients_1.jpg" alt="bg" class="layer" id="bg">
-      <img src="fmt_logo.png" alt="logo" class="layer" id="logo">
+      <img src="abstract_gradients_1.jpg" alt="bg" class="layer" id="bg" data-speed=".2">
+      <img src="fmt_logo.png" alt="logo" class="layer" id="logo" data-speed="-.2">
     </div>
     <script type="text/javascript">
+      document.addEventListener("mousemove", parallax);
+      function parallax(e){
+        this.querySelectorAll('.layer').forEach(layer => {
+          const speed = layer.getAttribute('data-speed');
 
+          const x = (window.innerWidth - e.pageX*speed);
+          const y = (window.innerHeight - e.pageY*speed);
+
+          layer.style.transform = `translateX($(x)px) translateY($(y)px)`;
+        });
+      }
     </script>
   </body>
 </html>
